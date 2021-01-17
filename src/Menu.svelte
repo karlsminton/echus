@@ -7,20 +7,13 @@
   	export let url = "";
 </script>
 
-<menu class="">
-	<Router url="{url}">
-		<nav>
-	    	<Link to="/">Home</Link>
-	    	<Link to="product">Product</Link>
-	  	</nav>
-	  	<!--<div>
-	    	<Route path="product" component="{Product}" /> 
-		    <--for now the router just support case sensitive,
-		        one workaround colud be add two time the route
-		        Example.
-		       <Route path="About" component="{About}" /> 
-		    --<
-	    	<Route path="/"><Home /></Route>
-	  	</div>-->
-	</Router>
-</menu>
+<div class="w-4/5 max-w-8xl mx-auto">
+	<menu class="px-0">
+		<Router url="{url}">
+			<nav>
+		    	<Link to="/">Home</Link>
+		    	<Link to="products">Product</Link>
+		  	</nav>
+		</Router>
+	</menu>
+</div>

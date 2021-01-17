@@ -20,10 +20,10 @@
 	})
 </script>
 
-<products>
+<section>
 	{#if products}
-		<div class="w-4/5 max-w-8xl mx-auto">
-			<ul>
+		<div class="mx-auto">
+			<ul class="block overflow-hidden">
 				{#each products as product}
 					<li class="w-1/4 float-left">
 						<Product {product} />
@@ -34,7 +34,7 @@
 	{:else}
 		<p>No products available at this time.</p>
 	{/if}
-</products>
+</section>
 
 <style>
 </style>

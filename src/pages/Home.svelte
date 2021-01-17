@@ -3,6 +3,8 @@
 </script>
 
 <main>
-    <h1>{pageName}!</h1>
-    <p>Welcome this is my <b>{pageName}</b></p>
+    <h1 class="text-4xl my-6">{pageName}</h1>
+    <div>
+    	<p>Welcome this is my <b>{pageName}</b></p>
+	</div>
 </main>
