@@ -1,5 +1,5 @@
 <script>
-	import { Router, link } from "svelte-routing";
+	import { Router, link } from "svelte-routing"
 	export let product
 </script>
 
