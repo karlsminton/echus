@@ -3,7 +3,7 @@
 
 	export let id
 	export let product
-
+	export let cartItem
 
 	console.log(id)
 
@@ -22,7 +22,22 @@
 		onMount(async () => {
 			const res = await fetch(url, params).then(response => response.json())
 			product = res
+
+			cartItem = {
+				name: product.name,
+				sku: product.sku,
+				price: product.price,
+				qty: 1
+			}
 		})
+	}
+
+	function addToCart() {
+		let session = Cookies.get('session')
+		console.log(session)
+		//session = [cartItem]
+		session.items.push(cartItem)
+		Cookies.set('session', session)
 	}
 </script>
 
@@ -34,5 +49,6 @@
 	    	<p>{product.sku}</p>
 	    	<p>${product.price}</p>
 		</div>
+		<button on:click={addToCart}>Add To Basket</button>
 	{/if}
 </main>

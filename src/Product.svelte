@@ -1,6 +1,11 @@
 <script>
+	import { onMount } from "svelte"
 	import { Router, link } from "svelte-routing"
 	export let product
+
+	onMount(async() => {
+
+	})
 </script>
 
 <div class="px-5 py-5">

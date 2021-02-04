@@ -1,7 +1,7 @@
-//import App from './Products.svelte'
 import Header from './Menu.svelte'
 import Body from './Body.svelte'
 import Footer from './Footer.svelte'
+import Cart from './Cart.svelte'
 
 const header = new Header({
 	target: document.querySelector('header'),
@@ -18,9 +18,14 @@ const footer = new Footer({
 	props: {}
 })
 
+const cart = new Cart({
+	target: document.body,
+	props: {}
+})
+
 export default {
 	header,
-	// app,
 	body,
+	cart,
 	footer
 }
