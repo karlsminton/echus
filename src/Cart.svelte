@@ -13,11 +13,11 @@
 	// }
 
 	onMount(() => {
-		let session = Cookies.get('session')
-		if (session === undefined) {
-			//let cart = await fetch(url, params).then(response => response.json())
-			Cookies.set('session', {items:[]});
-		}
+		// let session = Cookies.get('session')
+		// if (session === undefined) {
+		// 	//let cart = await fetch(url, params).then(response => response.json())
+		// 	Cookies.set('session', {items:[]});
+		// }
 	})
 
 	export let cost = '£40.99'

@@ -3,13 +3,10 @@
 
 	export let id
 	export let product
-	export let cartItem
-
-	console.log(id)
+	export let defaultCart = {items:{}}
 
 	if (id) {
 		let url = 'http://127.0.0.1:8080/products/' + id
-
 		let params = {
 			method: 'GET',
 			mode: 'cors',
@@ -18,26 +15,26 @@
 				'Content-Type': 'application/json'
 			}
 		}
-
 		onMount(async () => {
 			const res = await fetch(url, params).then(response => response.json())
 			product = res
-
-			cartItem = {
-				name: product.name,
-				sku: product.sku,
-				price: product.price,
-				qty: 1
-			}
 		})
 	}
 
 	function addToCart() {
 		let session = Cookies.get('session')
+		if (session === undefined) {
+			Cookies.set('session', JSON.stringify(defaultCart))
+			session = Cookies.get('session')
+		}
+		session = JSON.parse(session)
+		if (session.items[product.sku] === undefined) {
+			session.items[product.sku] = 1
+		} else {
+			session.items[product.sku] += 1
+		}
 		console.log(session)
-		//session = [cartItem]
-		session.items.push(cartItem)
-		Cookies.set('session', session)
+		Cookies.set('session', JSON.stringify(session))
 	}
 </script>
 
